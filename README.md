@@ -86,7 +86,7 @@ Cubic interpolation in 1-Dimension can be extended to Bicubic Interpolation in 2
 Cubic interpolation for a single point can be expressed in the following polynomial:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png " alt="drawing"/>
 </p>
 
 
