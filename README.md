@@ -97,8 +97,7 @@ With respect to our missing pixel region, we can select 4 different known pixels
 - x3 = 1
 - x4 = 2
 
-and create 4 separate equations as seen below:
-
+Using the **Cubic Interpolation function** we can create 4 separate equations as seen below:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_equations.png " alt="drawing"/>
