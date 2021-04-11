@@ -438,7 +438,7 @@ def main():
     CWD = os.getcwd()
     IMAGES = getFiles("./Images/")
     OUTPUT_DIR = f"{CWD}/OutputImages/"
-    
+    SCALE = 2
     #Choose which function to run
     #True = Run
     #False = Don't Run
@@ -456,11 +456,11 @@ def main():
     #Run Efficient Algorithm
     if(FAST):
         for file in IMAGES:
-            Bicubic(file, show=SHOW_IMAGE, outputDir= OUTPUT_DIR)
+            Bicubic(file, scale = SCALE, show=SHOW_IMAGE, outputDir= OUTPUT_DIR)
     #Run Brute Force Algorithm (WARNING: VERY SLOW, 8-10mins per picture)
     if(NAIVE):
         for file in IMAGES:
-            Bicubic_Naive(file, show=SHOW_IMAGE, outputDir = OUTPUT_DIR)
+            Bicubic_Naive(file, scale = SCALE, show=SHOW_IMAGE, outputDir = OUTPUT_DIR)
     
     #Compare CV2 Bicubic with this Project's Bicubic on a shrunk image, scaled up to normal size
     if(mse_flag):

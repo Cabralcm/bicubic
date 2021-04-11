@@ -4,7 +4,7 @@ Interpolation is a method of constructing new data points within the range of a 
 
 Linear methods of interpolation are common place in nearly every piece of technology in modern life.
 
-Some methods of linear interpolation for 2D dataset (e.g. images) include:
+Some methods of linear interpolation for 2D datasets (e.g. images) include:
 
 1) Nearest Neighbor
 2) Bilinear
@@ -12,11 +12,11 @@ Some methods of linear interpolation for 2D dataset (e.g. images) include:
 4) Cubic Splines
 5) Sinc Interpolation
 
-Two dimensional linear interpolation is often used in display screens (TVs, Cell Phones, etc), for instance when a low
+Two dimensional linear interpolation is often used in display screens (TVs, Cell Phones, etc). A good example is when a low
 resolution image is blown up on a higher resolution screen.
 
-We will be looking at the Bicubic Method of Linear Interpolation. It tends to be smoother than Nearest Neighbour and Bilinear,
-and does not require computation of a derivative as typically performed in Cubic Spline Interpolation.
+We will be looking at the **Bicubic Method** of Linear Interpolation. It tends to be smoother than Nearest Neighbour and Bilinear,
+and does not require the computation of a derivative as typically performed in Cubic Spline Interpolation.
 
 It is important to note that **Linear Systems** have the following two (2) mathematical properties:
 
@@ -28,11 +28,16 @@ It is important to note that **Linear Systems** have the following two (2) mathe
 
 > If x1[n] = y1[n], and x2[n] = y2[n], Then x1[n] + x2[n] = y1[n] + y2[n]
 
+These properties play a crucial role in making the Bicubic Interpolation Method more efficient!
+
 # Python Script
+
+Simply execute `main.py` to run Bicubic Interpolation (scaling is default set of 2)
 
 The Python script has two methods of Bicubic Interpolation
 1) **Brute Force** - Every point is individually interpolated by solving a Bicubic set of equations
-2) **Column-Row Cubic Interpolation** - Each column is first interpolated using a Cubic function, following by appying a Cubic function to each row.
+2) **Column-Row Cubic Interpolation** - Each column is first interpolated using a Cubic function, following by appying a Cubic function to each row. This effectively exploits the Linear properties of the Bicubic equation and enables two easier computations to be performed, and uses the outputs of first cubic iteration as inputs to the second iteration.
+ 
 > Note: The order does not matter. It could have been easily named "Row-Column". The main concept is that Cubic Interpolation is being applied twice. This method works because we are looking at LINEAR methods, and the properties of Homogeneity and Addivity therefore apply, which allows us to deconstruct Bicubic Interpolation into two successive iterations of Cubic Interpolation. 
 
 The python script also computes the Mean Squared Error (MSE) between `OpenCV` method of image scaling (which is a form of image interpolation)
