@@ -2,7 +2,7 @@
 
 Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
 
-Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling)
+Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling).
 
 ![Interpolation_Methods](https://github.com/Cabralcm/bicubic/blob/main/math/2d_images.png)
 
@@ -61,7 +61,7 @@ There are options in the `Bicubic()` constructor to automatically **show** bicub
 
 # 2D Image Iterpolation Problem
 
-
+![Problem](https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png)
 
 ![Test Image](https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png)
 
