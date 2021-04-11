@@ -107,9 +107,13 @@ Using the **Cubic Interpolation function**, we can apply the process 4 times, to
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_equations.png " alt="drawing"/>
 </p>
 
-We can converting this into a matrix, **B**, which contains the coefficients of each of the **a** terms. form
+To make it easier to solve this **linear system of equations**, we can convert them into a matrix form.
 
+Let's call this matrix **B**. Each row corresponds to one of the **Cubic Interpolation Functions**, and each column contains the coefficients of each of the **a** terms (from the respective Cubic Interpolation Function).
 
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing"/>
+</p>
 
 ### System of Equations
 ```
