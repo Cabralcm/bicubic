@@ -1,5 +1,6 @@
 # Bicubic Image Interpolation
 
+![Test Image](https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png)
 
 ### System of Equations
 ```
