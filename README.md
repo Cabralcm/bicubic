@@ -2,7 +2,9 @@
 
 Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
 
-Linear methods of interpolation are common place in nearly every piece of technology in modern life.
+Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling)
+
+[Interpolation_Methods](https://github.com/Cabralcm/bicubic/blob/main/math/2d_images.png)
 
 Some methods of linear interpolation for 2D datasets (e.g. images) include:
 
@@ -10,13 +12,13 @@ Some methods of linear interpolation for 2D datasets (e.g. images) include:
 2) Bilinear
 3) Bicubic
 4) Cubic Splines
-5) Sinc Interpolation
+5) Sinc Interpolation (Lanczos resampling)
 
 Two dimensional linear interpolation is often used in display screens (TVs, Cell Phones, etc). A good example is when a low
 resolution image is blown up on a higher resolution screen.
 
-We will be looking at the **Bicubic Method** of Linear Interpolation. It tends to be smoother than Nearest Neighbour and Bilinear,
-and does not require the computation of a derivative as typically performed in Cubic Spline Interpolation.
+We will be looking at the **Bicubic Method** of Linear Interpolation. It tends yield substantially better results than Nearest Neighbour and Bilinear,
+it does not require the computation of a derivative as typically performed in Cubic Spline Interpolation, and can be considered a computationally efficient approximation to Lanczos resampling.
 
 It is important to note that **Linear Systems** have the following two (2) mathematical properties:
 
@@ -32,7 +34,7 @@ These properties play a crucial role in making the Bicubic Interpolation Method 
 
 # Python Script
 
-Simply execute `main.py` to run Bicubic Interpolation (scaling is default set of 2)
+Simply execute `main.py` to run Bicubic Interpolation. Scaling has default value of 2x.
 
 The Python script has two methods of Bicubic Interpolation
 1) **Brute Force** - Every point is individually interpolated by solving a Bicubic set of equations
@@ -57,7 +59,7 @@ The python script will read Image files from the `./Image` directory. It will sa
 
 There are options in the `Bicubic()` constructor to automatically **show** bicubic images as they are interpolated.
 
-# Image Iterpolation Problem
+# 2D Image Iterpolation Problem
 
 
 
