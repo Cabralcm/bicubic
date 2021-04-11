@@ -4,7 +4,7 @@ Interpolation is a method of constructing new data points within the range of a 
 
 Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling)
 
-[Interpolation_Methods](https://github.com/Cabralcm/bicubic/blob/main/math/2d_images.png)
+![Interpolation_Methods](https://github.com/Cabralcm/bicubic/blob/main/math/2d_images.png)
 
 Some methods of linear interpolation for 2D datasets (e.g. images) include:
 
