@@ -61,6 +61,12 @@ There are options in the `Bicubic()` constructor to automatically **show** bicub
 
 # 2D Image Iterpolation Problem
 
+In the figure below, the yellow dots are the original pixels of a low-resolution image, while the white dots (pure white, and white with stripes) are the missing pixels to be interpolated.
+
+Cubic interpolation requires Four (4) 
+
+Each white dot must be interpolated using 16 (4) nearby neighbouring yellow dots. that lie directly in the row or column are completely white.
+
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"/>
 </p>
@@ -96,3 +102,21 @@ f(x,y) = (a00 + a01 * y + a02 * y2 + a03 * y3) +
 (a20 + a21 * y + a22 * y2 + a23 * y3) * x2 +
 (a30 + a31 * y + a32 * y2 + a33 * y3) * x3
 ```
+
+# Additional Resources
+
+1) [Interpolation - Dr. Xiaolin Wu, McMaster University](https://www.ece.mcmaster.ca/~xwu/3sk3/interpolation.pdf)
+
+2) [Paul Breeuwsma](https://www.paulinternet.nl/?page=bicubic)
+
+3) [Computerphile - Resizing Images](https://www.youtube.com/watch?v=AqscP7rc8_M)
+
+4) [Computerphile - Bicubic Interpolation](https://www.youtube.com/watch?v=poY_nGzEEWM)
+
+5) [2-D Interpolation - Dr. Ruye Wang, Harvey Mudd College](http://fourier.eng.hmc.edu/e176/lectures/ch7/node7.html)
+
+5b) [ML Course - Dr. Ruye Wang, Harvey Mudd College](http://fourier.eng.hmc.edu/e176/)
+
+6) [Bicubic - Michael Thomas Flanagan](https://www.ee.ucl.ac.uk/~mflanaga/java/BiCubicInterpolation.html)
+
+7) [Java Bicubic - Ken Perlin, NYU](https://mrl.cs.nyu.edu/~perlin/java/Bicubic.html)
