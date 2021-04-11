@@ -1,5 +1,53 @@
 # Bicubic Image Interpolation
 
+Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
+
+Linear methods of interpolation are common place in nearly every piece of technology in modern life.
+
+Some methods of linear interpolation for 2D dataset (e.g. images) include:
+
+1) Nearest Neighbor
+2) Bilinear
+3) Bicubic
+4) Cubic Splines
+5) Sinc Interpolation
+
+Two dimensional linear interpolation is often used in display screens (TVs, Cell Phones, etc), for instance when a low
+resolution image is blown up on a higher resolution screen.
+
+We will be looking at the Bicubic Method of Linear Interpolation. It tends to be smoother than Nearest Neighbour and Bilinear,
+and does not require computation of a derivative as typically performed in Cubic Spline Interpolation.
+
+It is important to note that **Linear Systems** have the following two (2) mathematical properties:
+
+1) **Homogeneity**
+
+> If x[n] = y[n], Then k*x[n] = k*y[n]
+
+2) **Additivity** 
+
+> If x1[n] = y1[n], and x2[n] = y2[n], Then x1[n] + x2[n] = y1[n] + y2[n]
+
+# Python Script
+
+The Python script has two methods of Bicubic Interpolation
+1) **Brute Force** - Every point is individually interpolated by solving a Bicubic set of equations
+2) **Column-Row Cubic Interpolation** - Each column is first interpolated using a Cubic function, following by appying a Cubic function to each row.
+> Note: The order does not matter. It could have been easily named "Row-Column". The main concept is that Cubic Interpolation is being applied twice. This method works because we are looking at LINEAR methods, and the properties of Homogeneity and Addivity therefore apply, which allows us to deconstruct Bicubic Interpolation into two successive iterations of Cubic Interpolation. 
+
+The python script also computes the Mean Squared Error (MSE) between `OpenCV` method of image scaling (which is a form of image interpolation)
+with the Efficient Interpolation method.
+
+## Image Input/Output
+
+The python script will read Image files from the `./Image` directory. It will save the *Bicubic* interpolated images in the `./OutputImages` directory
+
+There are options in the `Bicubic()` constructor to automatically **show** bicubic images as they are interpolated.
+
+# Image Iterpolation Problem
+
+
+
 ![Test Image](https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png)
 
 ### System of Equations
