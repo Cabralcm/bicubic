@@ -81,13 +81,29 @@ The two-dimensional function `f(x,y)` interpolates the data points in a 2D plane
 
 ## Cubic Interpolation
 
-Cubic interpolation in 1-Dimension can be extended to Bicubic Interpolation in 2 dimensions. 
+**Cubic interpolation** in 1 dimension can be extended to **Bicubic Interpolation** in 2 dimensions. 
 
 Cubic interpolation for a single point can be expressed in the following polynomial:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png " alt="drawing"/>
 </p>
+
+## Cubic Example
+
+With respect to our missing pixel region, we can select 4 different known pixels, for instance:
+- x1 = -1
+- x2 = 0
+- x3 = 1
+- x4 = 2
+
+and create 4 separate equations as seen below:
+
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_equations.png " alt="drawing"/>
+</p>
+
 
 
 ### System of Equations
