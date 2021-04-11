@@ -77,6 +77,8 @@ The mathematical formulation the Bicubic Algorithm is as follows:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic.png " alt="drawing"/>
 </p>
 
+Where the **a** terms are the coefficients of the **Bicubic Interpolation Function**. 
+
 The two-dimensional function `f(x,y)` interpolates the data points in a 2D plane, and approximates a single point based on surrounding 16 (x,y) data points.
 
 ## Cubic Interpolation
@@ -89,6 +91,8 @@ Cubic interpolation for a single point can be expressed in the following polynom
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png " alt="drawing"/>
 </p>
 
+Likewise, the **a** terms are the coefficients of the **Cubic Interpolation Function**.
+
 ## Cubic Example
 
 With respect to our missing pixel region, we can select 4 different known pixels, for instance:
@@ -97,11 +101,13 @@ With respect to our missing pixel region, we can select 4 different known pixels
 - x3 = 1
 - x4 = 2
 
-Using the **Cubic Interpolation function** we can create 4 separate equations as seen below:
+Using the **Cubic Interpolation function**, we can apply the process 4 times, to create 4 separate equations as seen below:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_equations.png " alt="drawing"/>
 </p>
+
+We can converting this into a matrix, **B**, which contains the coefficients of each of the **a** terms. form
 
 
 
