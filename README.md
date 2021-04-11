@@ -43,7 +43,15 @@ The Python script has two methods of Bicubic Interpolation
 The python script also computes the Mean Squared Error (MSE) between `OpenCV` method of image scaling (which is a form of image interpolation)
 with the Efficient Interpolation method.
 
-## Image Input/Output
+## Dependencies and Input/Output
+
+Python dependencies:
+```
+Python 3.6 or newer
+SciPy 1.4.1
+Numpy 1.18.1
+opencv-python 4.5.1.48 (older versions should be fine too)
+```
 
 The python script will read Image files from the `./Image` directory. It will save the *Bicubic* interpolated images in the `./OutputImages` directory
 
