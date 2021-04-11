@@ -62,8 +62,8 @@ There are options in the `Bicubic()` constructor to automatically **show** bicub
 # 2D Image Iterpolation Problem
 
 
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"  style="margin-left: auto;
-  margin-right: auto;"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"  style="margin-left:auto;
+  margin-right:auto;"/>
 
 ![Problem](https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png = 250x250)
 
