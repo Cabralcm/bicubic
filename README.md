@@ -1,2 +1,3 @@
-# bicubic
-Bicubic Image Interpolation
+# Bicubic Image Interpolation
+
+
