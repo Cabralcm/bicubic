@@ -63,17 +63,32 @@ There are options in the `Bicubic()` constructor to automatically **show** bicub
 
 In the figure below, the yellow dots are the original pixels of a low-resolution image, while the white dots (pure white, and white with stripes) are the missing pixels to be interpolated.
 
-Cubic interpolation requires Four (4) 
-
-Each white dot must be interpolated using 16 (4) nearby neighbouring yellow dots. that lie directly in the row or column are completely white.
-
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"/>
 </p>
 
-![Problem](https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png = 250x250)
+Cubic interpolation requires Four (4) data points to interpolate an unknown point. Bicubic interpolation requires Sixteen (16) data points.
 
-![Test Image](https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png)
+## Bicubic Interpolation
+
+The mathematical formulation the Bicubic Algorithm is as follows:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic.png " alt="drawing"/>
+</p>
+
+The two-dimensional function `f(x,y)` interpolates the data points in a 2D plane, and approximates a single point based on surrounding 16 (x,y) data points.
+
+## Cubic Interpolation
+
+Cubic interpolation in 1-Dimension can be extended to Bicubic Interpolation in 2 dimensions. 
+
+Cubic interpolation for a single point can be expressed in the following polynomial:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png " alt="drawing" width="400" height="400"/>
+</p>
+
 
 ### System of Equations
 ```
