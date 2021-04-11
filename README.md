@@ -61,7 +61,7 @@ There are options in the `Bicubic()` constructor to automatically **show** bicub
 
 # 2D Image Iterpolation Problem
 
-![Problem](https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png)
+![Problem](https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png = 250x250)
 
 ![Test Image](https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_sum.png)
 
