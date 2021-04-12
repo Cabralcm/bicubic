@@ -1,5 +1,23 @@
 # Bicubic Image Interpolation
 
+|Table of Contents|
+|---|
+|[Bicubic Image Interpolation](#bicubic-image-interpolation)|
+|[Python Script](#python-script)|
+|[2D Image Interpolation Problem](#2d-image-iterpolation-problem)|
+|[Bicubic Interpolation Formula](#bicubic-interpolation)|
+|[Cubic Interpolation Formula](#cubic-interpolation)|
+|[Cubic Example](#cubic-example)|
+|[Cubic Summary](#cubic-summary)|
+|[Cubic to Bicubic](#bicubic-extension-of-cubic-interpolation)
+|[Bicubic Exampe](#bicubic-example)|
+|[Interpolating and Unknown Point](#interpolating-an-unknown-point)|
+|[Brute Force vs Efficient](#brute-force-vs-efficient)|
+|[Efficient Algorithm](#efficient-algorithm)|
+|[Computational Trick](#computational-trick)|
+|[Mean Squared Error](#mean-squared-error-mse)|
+|[Additional Resources](#additional-resources)|
+
 Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
 
 Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling).
