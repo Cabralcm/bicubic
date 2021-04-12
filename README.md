@@ -236,7 +236,7 @@ Isolating for *matrix* **A**, we obtain:
 Since *matrix* **B** and it's inverse **B-1** are:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix_example.png" alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/b_matrix_example.png" alt="drawing"/>
 </p>
 
 
