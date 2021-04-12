@@ -141,12 +141,17 @@ Thus, if we wish to interpolate an unknown point *x* in 1-D, using the **Cubic I
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_matrix.png " alt="drawing"/>
 </p>
 
-For example, if we set `x = 0.5`, we would have the following system of equations.
+For example, if want to interpolate an unknown data point, `x = 0.5`, we would have the following system of equations.
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/.png " alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5.png " alt="drawing"/>
 </p>
 
+Applying matrix multiplcation, this simplifies to:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5_2.png " alt="drawing"/>
+</p>
 
 
 
