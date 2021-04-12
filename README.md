@@ -96,24 +96,59 @@ Likewise, the **a** terms are the coefficients of the **Cubic Interpolation Func
 ## Cubic Example
 
 With respect to our missing pixel region, we can select 4 different known pixels, for instance:
-- x1 = -1
-- x2 = 0
-- x3 = 1
-- x4 = 2
+- x0 = -1
+- x1 = 0
+- x2 = 1
+- x3 = 2
 
-Using the **Cubic Interpolation function**, we can apply the process 4 times, to create 4 separate equations as seen below:
+Using the **Cubic Interpolation function**, we create 4 separate equations. Each equation corresponds to the original **Cubic Interpolation Polynomial/Function** *f(x)*.
+
+We require 4 equations, since we are trying to solve for 4 unknowns, the 4 coefficients `a3, a2, a1, and a0`
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_equations.png " alt="drawing"/>
 </p>
 
-To make it easier to solve this **linear system of equations**, we can convert them into a matrix form.
+To make it easier to solve this **linear system of equations**, we can convert them into matrix form.
 
-Let's call this matrix **B**. Each row corresponds to one of the **Cubic Interpolation Functions**, and each column contains the coefficients of each of the **a** terms (from the respective Cubic Interpolation Function).
+Let's call this matrix **B**. Each row corresponds to one of the **Cubic Interpolation Functions**, and each column contains the coefficients of each of the **a** terms (from its respective Cubic Interpolation Function).
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix_first.png " alt="drawing"/>
 </p>
+
+We can define the *vector* **Y** as the output of these 4 equations:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/y_equation.png " alt="drawing"/>
+</p>
+
+And define *vector* **a** as the coefficients for the Cubic Interpolation Function:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/vector_a.png " alt="drawing"/>
+</p>
+
+These equations can written as:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/y_vector.png " alt="drawing"/>
+</p>
+
+Thus, if we wish to interpolate an unknown point *x* in 1-D, using the **Cubic Interpolation Function**, *f(x)*, we can define *f(x)* in matrix form as follows:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_matrix.png " alt="drawing"/>
+</p>
+
+For example, if we set `x = 0.5`, we would have the following system of equations.
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/.png " alt="drawing"/>
+</p>
+
+
+
 
 ### System of Equations
 ```
