@@ -126,7 +126,7 @@ We can define the *vector* **Y** as the output of these 4 equations:
 And define *vector* **a** as the coefficients for the Cubic Interpolation Function:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/vector_a.png " alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/vector_a.PNG " alt="drawing"/>
 </p>
 
 These equations can written as:
