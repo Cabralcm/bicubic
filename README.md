@@ -296,7 +296,7 @@ f(x,y) = (a00 + a01 * y + a02 * y2 + a03 * y3) +
 Returning to our original problem, we can now discuss how to improve the original **Bicubic Algorithm** for image resizing.
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing"/>
 </p>
 
 The **pure white pixels** directly adjacent to 2 known yellow pixels, in their corresponding row and column. 
@@ -317,7 +317,7 @@ Perform **Cubic** interpolation along each of EVEN rows, for each of the missing
 **We use the known yellow pixels in the row to perform cubic interpolation**
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/first_pass.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/first_pass.png " alt="drawing"/>
 </p>
 
 ### Second Pass
@@ -327,7 +327,7 @@ Perform **Cubic** interpolation along all of the column pixels, for each missing
 **Use the known yellow pixels in the column to perform cubic interpolation** 
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/second_pass.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/second_pass.png " alt="drawing"/>
 </p>
 
 After the **SECOND PASS**, the **Hashed White Pixels** will have had two iterations of **Cubic** interpolation applied. 
@@ -345,43 +345,43 @@ When we solve the **Cubic Interpolation Formula**, we set the missing pixel as t
 This again yield the **B** *matrix*:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing">
 </p>
 
 And likewise, yields the **B inverse** *matrix*:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse.png " alt="drawing"/>
 </p>
 
 Once again, we have the `f(x)` equation expressed in `matrix form`:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_equation.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_equation.png " alt="drawing"/>
 </p>
 
 Plugging in `x = 0` as our UNKNOWN pixel that we want to interpolate: 
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0.png " alt="drawing"/>
 </p>
 
 This simplifies to:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_1.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_1.png " alt="drawing"/>
 </p>
 
 Performing *matrix multiplication* we get the following result:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_2.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_2.png " alt="drawing"/>
 </p>
 
 Cleaning up the decimal terms by factoring out a constant, we obtain the final `f(x)` equation:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_3.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_3.png " alt="drawing"/>
 </p>
 
 ### Final Result
@@ -405,7 +405,7 @@ The assumption here is that the implementation of image scaling and bicubic inte
 The Mean Squared Error (MSE) is defined as:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/mse.png " alt="drawing" width="400" height="400"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/mse.png " alt="drawing"/>
 </p>
 
 ## MSE Procedure
