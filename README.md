@@ -18,6 +18,8 @@
 |14. [Mean Squared Error](#mean-squared-error-mse)|
 |15. [Additional Resources](#additional-resources)|
 
+
+
 Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
 
 Linear methods of interpolation are common place in nearly every piece of technology in modern life, they play particularly important roles in [Image Scaling](https://en.wikipedia.org/wiki/Image_scaling).
