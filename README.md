@@ -150,7 +150,7 @@ For example, if want to interpolate an unknown data point, `x = 0.5`, we would h
 Applying matrix multiplcation, this simplifies to:
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5_2.png " alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5_2.PNG " alt="drawing"/>
 </p>
 
 
