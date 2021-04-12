@@ -173,6 +173,8 @@ x0 = -100, x1 = -50, x2 = 50, x3 = 100
 
 This does not always hold true, it depends on the distribution of your data.
 
+> Aside: If this wasn't clear, the value that **a coefficients** taken on, are dependent upon the input KNOWN datapoints.
+
 # Bicubic Extension of Cubic Interpolation
 
 For the **Bicubic Interpolation formula** our system of equations in matrix form is as follows:
@@ -180,6 +182,23 @@ For the **Bicubic Interpolation formula** our system of equations in matrix form
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_interpolation.png" alt="drawing"/>
 </p>
+
+The function `f(x,y)` can be represented by *matrix* **F** for all 16 data points required to interpolate an unknown point.
+
+**Example**
+We will use the following data points to as an example:
+```
+x = {-1,0,1,2}
+
+y = {-1,0,1,2}
+
+as arguments in the function f(x,y)
+```
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing"/>
+</p>
+
 
 
 
