@@ -192,9 +192,10 @@ x = {-1,0,1,2}
 
 y = {-1,0,1,2}
 
-as arguments in the function f(x,y)
+As arguments in the function f(x,y)
 ```
 
+F = 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing"/>
 </p>
