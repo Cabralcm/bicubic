@@ -185,14 +185,16 @@ For the **Bicubic Interpolation formula** our system of equations in matrix form
 
 The function `f(x,y)` can be represented by *matrix* **F** for all 16 data points required to interpolate an unknown point.
 
-**Example**
+# Bicubic Example 
+
 We will use the following data points to as an example:
+
 ```
 x = {-1,0,1,2}
 
 y = {-1,0,1,2}
 
-As arguments in the function f(x,y)
+As the set of arguments to the function f(x,y)
 ```
 
 ### Matrix F =  
@@ -233,7 +235,7 @@ Isolating for *matrix* **A**, we obtain:
 > Yet another way (I'm having fun with this), we can say that the linear combination of equations of Matrix B cannot equal zero, unless the coefficients of each element is zero.
 > If you perform Gaussian Elimination, you will not obtain a row of zeros if the system of equations are **linearly indepedent**.
 
-Since *matrix* **B** and it's inverse **B-1** are:
+This yields the following *matrix* **B** and it's inverse **B-1**:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/b_matrix_example.png" alt="drawing"/>
@@ -244,6 +246,12 @@ Since *matrix* **B** and it's inverse **B-1** are:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse_example.png" alt="drawing"/>
 </p>
 
+Now if we wish to interpolate a set of UNKNOWN `(x,y)` points, such as:
+`x = 0.5` and `y = 0.5`, we would do so using the following equation:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_example.png" alt="drawing"/>
+</p>
 
 ### System of Equations
 ```
