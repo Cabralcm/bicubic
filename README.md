@@ -246,11 +246,19 @@ This yields the following *matrix* **B** and it's inverse **B-1**:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse_example.png" alt="drawing"/>
 </p>
 
+## Interpolating an Unknown Point
+
 Now if we wish to interpolate a set of UNKNOWN `(x,y)` points, such as:
 `x = 0.5` and `y = 0.5`, we would do so using the following equation:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_example.png" alt="drawing"/>
+</p>
+
+which reduces to
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_example_2.png" alt="drawing"/>
 </p>
 
 ### System of Equations
