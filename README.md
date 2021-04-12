@@ -261,7 +261,9 @@ which reduces to
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solution_example_2.png" alt="drawing"/>
 </p>
 
-### System of Equations
+This can be written explicitly as a series of equations (not in matrix form), where each equation is used to determine the value of one of the **a coefficients**.
+
+### System of Equations for A Coefficients
 ```
 a00 = f(1,1)
 a01 = -0.5*f(1,0) + 0.5*f(1,2)
@@ -289,6 +291,69 @@ f(x,y) = (a00 + a01 * y + a02 * y2 + a03 * y3) +
 (a30 + a31 * y + a32 * y2 + a33 * y3) * x3
 ```
 
+# Brute Force vs Efficient
+
+Returning to our original problem, we can now discuss how to improve the original **Bicubic Algorithm** for image resizing.
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/scenario.png " alt="drawing" width="400" height="400"/>
+</p>
+
+The **pure white pixels** directly adjacent to 2 known yellow pixels, in their corresponding row and column. 
+Due to their close proximity (4-adjacency) of white pixels to known yellow pixels, then these white pixels can be interpolated simply by using the **Cubic Interpolation Formula/Algorithm**. 
+
+However, the **hashed white pixels** they can be interpolated in two possible ways:
+
+**1) Brute Force Approach** - Compute them by directly solving the **Bicubic Interpolation Formula** by using 16 known yellow pixels around it.
+
+**2) Efficient Approach** - Use the **Cubic Algorithm Twice**. First 
+
+## Efficient Algorithm
+
+### First Pass
+
+Perform **Cubic** interpolation along each of EVEN rows, for each of the missing column pixels (that is, all of the ODD column pixels).
+
+**We use the known yellow pixels in the row to perform cubic interpolation**
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/first_pass.png " alt="drawing" width="400" height="400"/>
+</p>
+
+### Second Pass
+
+Perform **Cubic** interpolation along all of the column pixels, for each missing row pixel (that is, for all of the ODD row pixels).
+
+**Use the known yellow pixels in the column to perform cubic interpolation** 
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/second_pass.png " alt="drawing" width="400" height="400"/>
+</p>
+
+After the **SECOND PASS**, the **Hashed White Pixels** will have had two iterations of **Cubic** interpolation applied. 
+
+This is functionally equivalent to applying **Bicubic Interpolation** once!
+
+However, by understanding the relationship between Cubic and Bicubic interpolation, instead of having to solve 16 equations by directly solving **Bicubic Interpolation** for each Hashed white pixel, we only had to solve TWO sets **Cubic Interpolation** which are only 4 equations for each iteration!
+
+## Computational Trick
+
+When we solve the **Cubic Interpolation Formula**, we set the missing pixel as the reference point, such that `x = 0`. 
+
+**This allows for the SAME set of *a coefficients* to be used in each iteration of solving the Cubic Interpolation Formula!!**
+
+This again yield the **B** *matrix* as such:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing" width="400" height="400"/>
+</p>
+
+And
+
+# Mean Squared Error (MSE)
+
+
+
 # Additional Resources
 
 1) [Interpolation - Dr. Xiaolin Wu, McMaster University](https://www.ece.mcmaster.ca/~xwu/3sk3/interpolation.pdf)
@@ -301,8 +366,8 @@ f(x,y) = (a00 + a01 * y + a02 * y2 + a03 * y3) +
 
 5) [2-D Interpolation - Dr. Ruye Wang, Harvey Mudd College](http://fourier.eng.hmc.edu/e176/lectures/ch7/node7.html)
 
-5b) [ML Course - Dr. Ruye Wang, Harvey Mudd College](http://fourier.eng.hmc.edu/e176/)
+6) [ML Course - Dr. Ruye Wang, Harvey Mudd College](http://fourier.eng.hmc.edu/e176/)
 
-6) [Bicubic - Michael Thomas Flanagan](https://www.ee.ucl.ac.uk/~mflanaga/java/BiCubicInterpolation.html)
+7) [Bicubic - Michael Thomas Flanagan](https://www.ee.ucl.ac.uk/~mflanaga/java/BiCubicInterpolation.html)
 
-7) [Java Bicubic - Ken Perlin, NYU](https://mrl.cs.nyu.edu/~perlin/java/Bicubic.html)
+8) [Java Bicubic - Ken Perlin, NYU](https://mrl.cs.nyu.edu/~perlin/java/Bicubic.html)
