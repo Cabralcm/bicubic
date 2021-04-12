@@ -342,17 +342,103 @@ When we solve the **Cubic Interpolation Formula**, we set the missing pixel as t
 
 **This allows for the SAME set of *a coefficients* to be used in each iteration of solving the Cubic Interpolation Formula!!**
 
-This again yield the **B** *matrix* as such:
+This again yield the **B** *matrix*:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix.png " alt="drawing" width="400" height="400"/>
 </p>
 
-And
+And likewise, yields the **B inverse** *matrix*:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse.png " alt="drawing" width="400" height="400"/>
+</p>
+
+Once again, we have the `f(x)` equation expressed in `matrix form`:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_equation.png " alt="drawing" width="400" height="400"/>
+</p>
+
+Plugging in `x = 0` as our UNKNOWN pixel that we want to interpolate: 
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0.png " alt="drawing" width="400" height="400"/>
+</p>
+
+This simplifies to:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_1.png " alt="drawing" width="400" height="400"/>
+</p>
+
+Performing *matrix multiplication* we get the following result:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_2.png " alt="drawing" width="400" height="400"/>
+</p>
+
+Cleaning up the decimal terms by factoring out a constant, we obtain the final `f(x)` equation:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_solve_0_3.png " alt="drawing" width="400" height="400"/>
+</p>
+
+### Final Result
+
+As long as we set the relative position of our interpolated pixel to `x = 0`, we can use the final `f(x)` equation above to interpolate our unknown pixel using 4 known `x points`.
+
+This saves us from computing new coefficients every iteration!
+
+### Performance - Brute Force vs. Efficient
+
+For the sample images provided, the **Bruce Force** algorithm takes about *8 to 10 minutes* to compute. That is why I have included a `process bar` for you to enjoy during the wait.
+
+Conversely, the **Efficient** Algorithm scales and interpolates the missing pixels in around *1 second* to compute.
 
 # Mean Squared Error (MSE)
 
+In order to properly evalute the performance my of bicubic interpolation algorithm, we can perform the Mean Squared Error (MSE) between my algorith and how `OpenCV` computes image scaling using `Bicubic Interpolation`.
 
+The assumption here is that the implementation of image scaling and bicubic interpolation in `OpenCV` are far more accurate than what I have implemented.
+
+The Mean Squared Error (MSE) is defined as:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/mse.png " alt="drawing" width="400" height="400"/>
+</p>
+
+## MSE Procedure
+
+The sample procedure that is followed in the code, without any claim to being the proper way to perform a comparison of MSE, is as follows:
+
+**Test 1 - Upscaling from a Downscaled Image**
+
+1) Read in an Image
+2) Scale down the Image by a factor of 2 using `OpenCV` library (implementing Bicubic Interpolation).
+3) With the same scaled down Image, scale up the image by a factor of 2 using:
+- `OpenCV` Bicubic Interpolation
+- `Efficient` Bicubic Interpolation (as outlined here)
+4) Compare the MSE between these two images
+
+**Test 2 - Upscaling from an Original Image**
+
+1) Read in an Image
+2) Using the same original image, scale up the image by a factor of 2 using:
+- `OpenCV` Bicubic Interpolation
+- `Efficient` Bicubic Interpolation (as outlined here)
+4) Compare the MSE between these two images
+
+
+## MSE Results
+
+| Test | Mean Squared Error (MSE)|
+| ---| ---|
+| Test 1 - OpenCV vs Original Image | 39.29 |
+| Test 1 - Efficient Bicubic vs Original Image | 1596.43 |
+| Test 2 - OpenCV vs Efficient Bicubic | 1507.84 | 
+
+> Test 2 appears to the be more valid test since there is a strong bias for OpenCV to perform better for Test 1 since OpenCV's methods are used to both downscale and upscale the same image.
 
 # Additional Resources
 
