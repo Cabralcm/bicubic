@@ -153,6 +153,36 @@ Applying matrix multiplcation, this simplifies to:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5_2.PNG " alt="drawing"/>
 </p>
 
+## Cubic Summary
+
+We have taken the Cubic Interpolation equation, which has 4 unknowns, corresponding to the **a coefficients**, `a0, a1, a2, and a3`.
+
+We require 4 equations to solve for 4 unknowns.
+
+We used the following known *x* datapoints to solve for the **a coefficients**: `x0 = -1, x1 = 0, x2 = 1, x3 = 2`.
+
+After we have solved for the coefficients, we can use their weights to extrapolate an unknown point `x = 0.5`.
+
+> Important: The neighbourhood that you choose for your KNOWN points is directly corresponds to the accuracy of the interpolation. If you choose KNOWN points that close to the UNKNOWN point(s), then you will *typically* have an more accurate result than if you use KNOWN points that are far away from your UNKNOWN points
+
+**Example**
+If you are trying to interpolate x = 0.5, it is better to use the KNOWN points: x0 = -1, x1 = 0, x2 = 1, x3 = 2
+
+Than if you use the KNOWN points of:
+x0 = -100, x1 = -50, x2 = 50, x3 = 100
+
+This does not always hold true, it depends on the distribution of your data.
+
+# Bicubic Extension of Cubic Interpolation
+
+For the **Bicubic Interpolation formula** our system of eequations in matrix form is as follows:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_interpolation.png" alt="drawing"/>
+</p>
+
+
+
 
 
 ### System of Equations
