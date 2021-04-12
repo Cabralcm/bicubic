@@ -1,23 +1,15 @@
 # Bicubic Image Interpolation
 
-|Table of Contents|
-|---|
-|1. [Bicubic Image Interpolation](#bicubic-image-interpolation)|
-|2. [Python Script](#python-script)|
-|3. [2D Image Interpolation Problem](#2d-image-iterpolation-problem)|
-|4. [Bicubic Interpolation Formula](#bicubic-interpolation)|
-|5. [Cubic Interpolation Formula](#cubic-interpolation)|
-|6. [Cubic Example](#cubic-example)|
+|Table of Contents| | 
+|---| ---|
+|1. [Bicubic Image Interpolation](#bicubic-image-interpolation)|9. [Bicubic Example](#bicubic-example)|
+|2. [Python Script](#python-script)|10. [Interpolating and Unknown Point](#interpolating-an-unknown-point)|
+|8. [Cubic to Bicubic](#bicubic-extension-of-cubic-interpolation)|11. [Brute Force vs Efficient](#brute-force-vs-efficient)|
+|3. [2D Image Interpolation Problem](#2d-image-iterpolation-problem)|12. [Efficient Algorithm](#efficient-algorithm)|
+|4. [Bicubic Interpolation Formula](#bicubic-interpolation)|13. [Computational Trick](#computational-trick)|
+|5. [Cubic Interpolation Formula](#cubic-interpolation)|14. [Mean Squared Error](#mean-squared-error-mse)|
+|6. [Cubic Example](#cubic-example)|15. [Additional Resources](#additional-resources)|
 |7. [Cubic Summary](#cubic-summary)|
-|8. [Cubic to Bicubic](#bicubic-extension-of-cubic-interpolation)
-|9. [Bicubic Exampe](#bicubic-example)|
-|10. [Interpolating and Unknown Point](#interpolating-an-unknown-point)|
-|11. [Brute Force vs Efficient](#brute-force-vs-efficient)|
-|12. [Efficient Algorithm](#efficient-algorithm)|
-|13. [Computational Trick](#computational-trick)|
-|14. [Mean Squared Error](#mean-squared-error-mse)|
-|15. [Additional Resources](#additional-resources)|
-
 
 
 Interpolation is a method of constructing new data points within the range of a discrete set of known data points.
