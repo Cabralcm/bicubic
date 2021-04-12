@@ -144,7 +144,7 @@ Thus, if we wish to interpolate an unknown point *x* in 1-D, using the **Cubic I
 For example, if want to interpolate an unknown data point, `x = 0.5`, we would have the following system of equations.
 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5.png " alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_example_0_5.PNG" alt="drawing"/>
 </p>
 
 Applying matrix multiplcation, this simplifies to:
@@ -175,7 +175,7 @@ This does not always hold true, it depends on the distribution of your data.
 
 # Bicubic Extension of Cubic Interpolation
 
-For the **Bicubic Interpolation formula** our system of eequations in matrix form is as follows:
+For the **Bicubic Interpolation formula** our system of equations in matrix form is as follows:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_interpolation.png" alt="drawing"/>
