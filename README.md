@@ -206,7 +206,9 @@ We let **F** be equal to:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_matrix.png" alt="drawing"/>
 </p>
 
-The **B** *matrix* contains 4 equations for the `x coordinates` for each *f(x,y)* point. And the **B Transpose** *matrix* corresponds to the `y coordinates` for each `f(x,y)` point.
+The **B** *matrix* contains 4 equations for the `x coordinates` for each `f(x,y)` point. 
+
+The **B Transpose** *matrix* corresponds to the `y coordinates` for each `f(x,y)` point.
 
 **A** is our coefficient matrix.
 
@@ -214,10 +216,17 @@ The **B** *matrix* contains 4 equations for the `x coordinates` for each *f(x,y)
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_matrix_example.png" alt="drawing"/>
 </p>
 
+## Our Goal
 
+We want to solve for the **a coefficients** for the 16 equations. 
 
+We therefore want to compute *matrix* **A**. 
 
+Isolating for *matrix* **A**, we obtain:
 
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/a_matrix.png" alt="drawing"/>
+</p>
 
 
 ### System of Equations
