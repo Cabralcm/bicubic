@@ -195,9 +195,9 @@ y = {-1,0,1,2}
 As arguments in the function f(x,y)
 ```
 
-F = 
+**F** = 
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing" style="float:left;"/>
 </p>
 
 
