@@ -206,9 +206,9 @@ We let **F** be equal to:
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_matrix.png" alt="drawing"/>
 </p>
 
-The **B** *matrix* contains 4 equations for the `x coordinates` for each `f(x,y)` point. 
+The **B** *matrix* corresponds to the 4 equations for the `x coordinates` for each `f(x,y)` point. 
 
-The **B Transpose** *matrix* corresponds to the `y coordinates` for each `f(x,y)` point.
+The **B Transpose** *matrix* corresponds to 4 equations for the `y coordinates` for each `f(x,y)` point.
 
 **A** is our coefficient matrix.
 
@@ -226,6 +226,22 @@ Isolating for *matrix* **A**, we obtain:
 
 <p align="center">
 <img src="https://github.com/Cabralcm/bicubic/blob/main/math/a_matrix.png" alt="drawing"/>
+</p>
+
+> Assumption: We must assume that B is an invertable matrix. 
+> Stated another way, B is non-signular matrix. 
+> Yet another way (I'm having fun with this), we can say that the linear combination of equations of Matrix B cannot equal zero, unless the coefficients of each element is zero.
+> If you perform Gaussian Elimination, you will not obtain a row of zeros if the system of equations are **linearly indepedent**.
+
+Since *matrix* **B** and it's inverse **B-1** are:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_matrix_example.png" alt="drawing"/>
+</p>
+
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/B_inverse_example.png" alt="drawing"/>
 </p>
 
 
