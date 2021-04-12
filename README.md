@@ -195,10 +195,25 @@ y = {-1,0,1,2}
 As arguments in the function f(x,y)
 ```
 
-### F =  
+### Matrix F =  
 <p align="center">
-<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing" style="float:left;"/>
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/bicubic_example.png" alt="drawing"/>
 </p>
+
+We let **F** be equal to:
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_matrix.png" alt="drawing"/>
+</p>
+
+The **B** *matrix* contains 4 equations for the `x coordinates` for each *f(x,y)* point. And the **B Transpose** *matrix* corresponds to the `y coordinates` for each `f(x,y)` point.
+
+**A** is our coefficient matrix.
+
+<p align="center">
+<img src="https://github.com/Cabralcm/bicubic/blob/main/math/f_matrix_example.png" alt="drawing"/>
+</p>
+
 
 
 
