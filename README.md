@@ -3,7 +3,7 @@
 |Table of Contents| | 
 |---| ---|
 |1. [Bicubic Image Interpolation](#bicubic-image-interpolation)|9. [Bicubic Example](#bicubic-example)|
-|2. [Python Script](#python-script)|10. [Interpolating and Unknown Point](#interpolating-an-unknown-point)|
+|2. [Python Script](#python-script)|10. [Interpolating an Unknown Point](#interpolating-an-unknown-point)|
 |8. [Cubic to Bicubic](#bicubic-extension-of-cubic-interpolation)|11. [Brute Force vs Efficient](#brute-force-vs-efficient)|
 |3. [2D Image Interpolation Problem](#2d-image-iterpolation-problem)|12. [Efficient Algorithm](#efficient-algorithm)|
 |4. [Bicubic Interpolation Formula](#bicubic-interpolation)|13. [Computational Trick](#computational-trick)|
@@ -175,17 +175,17 @@ We used the following known *x* datapoints to solve for the **a coefficients**: 
 
 After we have solved for the coefficients, we can use their weights to extrapolate an unknown point `x = 0.5`.
 
-> Important: The neighbourhood that you choose for your KNOWN points is directly corresponds to the accuracy of the interpolation. If you choose KNOWN points that close to the UNKNOWN point(s), then you will *typically* have an more accurate result than if you use KNOWN points that are far away from your UNKNOWN points
+> Important: The neighbourhood/proximity of your KNOWN points typically directly corresponds to the accuracy of the interpolation. If you choose KNOWN points that close to the UNKNOWN point(s), then you will *typically* have an more accurate result than if you use KNOWN points that are far away from your UNKNOWN points
 
 **Example**
-If you are trying to interpolate x = 0.5, it is better to use the KNOWN points: x0 = -1, x1 = 0, x2 = 1, x3 = 2
+If you are trying to interpolate x = 0.5, it is better to use KNOWN points: x0 = -1, x1 = 0, x2 = 1, x3 = 2
 
 Than if you use the KNOWN points of:
 x0 = -100, x1 = -50, x2 = 50, x3 = 100
 
-This does not always hold true, it depends on the distribution of your data.
+However, this does not always hold true, the accuracy depends on the distribution and  of your data.
 
-> Aside: If this wasn't clear, the value that **a coefficients** taken on, are dependent upon the input KNOWN datapoints.
+> Aside: If this wasn't clear, the value that **a coefficients** take on are dependent upon the input KNOWN datapoints.
 
 # Bicubic Extension of Cubic Interpolation
 
